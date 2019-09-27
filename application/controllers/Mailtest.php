@@ -2,32 +2,31 @@
 
 class Mailtest extends MY_Controller{
 
-  function __construct(){
-    parent::__construct();
-  }
+	function __construct(){
+		parent::__construct();
+	}
 
-  function index(){
+	function index(){
 
-    $this->load->library('email');
+		$this->load->library('email');
 
-    $config['protocol'] = 'sendmail';
-    $config['mailpath'] = '/usr/sbin/sendmail';
-    $config['charset'] = 'utf-8';
-    $config['wordwrap'] = TRUE;
+		$config['protocol'] = 'sendmail';
+		$config['mailpath'] = '/usr/sbin/sendmail';
+		$config['charset'] = 'utf-8';
+		$config['wordwrap'] = TRUE;
 
-    $this->email->initialize($config);
+		$this->email->initialize($config);
 
 
-    $this->email->from('gon@gon.com', 'gogogo4');
-    $this->email->to('deutschgon@gmail.com');
-    $this->email->subject('titile part');
-    $this->email->message('good good the email class.');
+		$this->email->from('gon@gon.com', 'lunaaws190506');
+		$this->email->to('deutschgon@gmail.com');
+		$this->email->subject('titile part');
+		$this->email->message('good good the email class.');
 
-    $this->email->send();
+		$this->email->send();
 
-    echo $this->email->print_debugger();
+		echo $this->email->print_debugger();
 
-  }
+	}
 
 }
-?>
